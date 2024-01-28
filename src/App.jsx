@@ -1,19 +1,31 @@
-import Div from './components/Div/Div'
-import FullName from './components/FullName/FullName';
-import Form from './components/Form/Form';
 import './App.css';
 
 
-function App() {
+import { useState } from "react";
+ 
+const App = () => {
+  let [value, setValue] = useState(1);
+ 
+ 
+  const minus = () => {
+    setValue(--value);
+    console.clear();
+    console.log(value);
+  };
+
+  const plus = () => {
+    setValue(++value);
+    console.clear();
+    console.log(value);
+  }
+
   return (
     <>
-    <div className='App-logo'></div>
-    <Div />
-    <Form />
-    <FullName name='Ibragim' surname='Alakparov'/>
-    <FullName name='ronaldu' surname='christiano'/> 
+       <button onClick={plus}>Plus</button>
+       <button onClick={minus}>Minus</button>
+      <div>{value.toString()}</div>
     </>
   );
-}
-
+};
+ 
 export default App;
