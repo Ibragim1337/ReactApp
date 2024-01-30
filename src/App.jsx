@@ -1,50 +1,29 @@
-import './App.css';
-
+import "./App.css";
+import Div from "./components/Div/Div";
+import Button from "./components/Button/Button";
 
 import { useState } from "react";
- 
+
 const App = () => {
-  let [value, setValue] = useState(1);
-  let [step, setStep] = useState(1);
- 
-  const minusStep = () => {
-    setValue(value - step);
-    console.clear();
-
-    console.log(value);
-  };
-
-  const plusStep = () => {
-    setValue(value + step);
-    console.clear();
-
-    console.log(value);
+  const [count, setCount] = useState(0);
+  
+  const minus = () => {
+    setCount(count - 1);
+    console.log(count);
   }
 
   const plus = () => {
-    setStep(++step);
-    console.clear();
-    console.log(step);
-  }
-
-  const minus = () => {
-    if(step < 2) return;
-    setStep(--step);
-    console.clear();
-    console.log(step);
+    setCount(count + 1);
+    console.log(count);
   }
 
   return (
     <>
-       <button onClick={plusStep}>Plus</button>
-       <div>{value.toString()}</div>
-       <button onClick={minusStep}>Minus</button>
-       <br/>
-       <button onClick={plus}>Plus</button>
-       <div>{step.toString()}</div>
-       <button onClick={minus}>Minus</button>
+  <Button qorwok={minus}>-</Button>
+  <Div>{count}</Div>
+  <Button qorwok={plus}>+</Button>
     </>
   );
 };
- 
+
 export default App;
