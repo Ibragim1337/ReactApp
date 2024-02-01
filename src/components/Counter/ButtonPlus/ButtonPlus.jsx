@@ -1,9 +1,8 @@
 import Button from '../../Button/Button'
 
-const ButtonPlus = ({setCount, count}) => {
+const ButtonPlus = ({setCount}) => {
     const plus = () => {
-        setCount(count + 1);
-        console.log(count);
+        setCount(prevCount => prevCount + 1);
       }
     return (
         <Button qorwok={plus}>+</Button>
