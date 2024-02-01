@@ -1,27 +1,16 @@
 import "./App.css";
-import Div from "./components/Div/Div";
-import Button from "./components/Button/Button";
+import ButtonMinus from "./components/Counter/ButtonMinus/ButtonMinus";
+import ButtonPlus from "./components/Counter/ButtonPlus/ButtonPlus";
+import Counter from "./components/Counter/Counter";
 
-import { useState } from "react";
 
 const App = () => {
-  const [count, setCount] = useState(0);
   
-  const minus = () => {
-    setCount(count - 1);
-    console.log(count);
-  }
-
-  const plus = () => {
-    setCount(count + 1);
-    console.log(count);
-  }
-
   return (
     <>
-  <Button qorwok={minus}>-</Button>
-  <Div>{count}</Div>
-  <Button qorwok={plus}>+</Button>
+
+    <Counter></Counter>
+
     </>
   );
 };
